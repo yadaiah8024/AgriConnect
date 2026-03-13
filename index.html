@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AgriConnect</title>
+    <style>
+        body
+         {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #1c2d3e;
+        }
+        h1 
+        { 
+            color: rgb(68, 155, 21);   
+            font-size: 50px;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .logo
+         {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;   
+            object-fit: cover;    
+        }
+           .enter-btn
+            {
+            padding: 12px 40px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .enter-btn:hover 
+        {
+            background-color: #27ae60;
+            transform: scale(1.05);
+        }
+    </style>
+    
+<script>
+function goToSignIn(){
+window.location.href="signin.html";
+}
+</script>
+</head>
+<body>
+    <h1>AGRI CONNECT</h1>
+    <a href="DashBoard.html"></a>
+    <img src="AgriConnect.logo.jpg" class="logo">
+  <button class="enter-btn" onclick="goToSignIn()">ENTER</button>
+</body>
+</html>

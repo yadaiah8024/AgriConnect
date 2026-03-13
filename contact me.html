@@ -1,34 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>contact me</title>
-    </head>
-    <body>
-        <div>
-           <section style="background-color:burlywood;text-align:center;color:cornsilk;padding: 20px;"><h1>CONTACT</h1></section>
-        </div>
-        <nav style="background-color:thistle;padding:  15px;">
-        <a href="index.html" style="color: white; margin-right: 20px;">Home</a>
-        <a href="about.html" style="color: white; margin-right: 20px;">About</a>
-        <a href="projects.html" style="color: white; margin-right: 20px;">Projects</a>
-        <a href="contact me.html" style="color: white;margin-right: 20px;">Contact</a>
-        <a href="skills.html" style="color: white;margin-right: 20px;">My Skills</a>
-    </nav>
-    
+<head>
+    <title>contact me</title>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            if (name == "" || email == "" || message == "") {
+                alert("Please fill all the fields!");
+                return false;
+            } 
+            else {
+                alert("Message Sent Successfully!");
+                return true;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div>
+<section style="background-color:burlywood;text-align:center;color:cornsilk;padding:20px;">
+<h1>CONTACT</h1>
+</section>
+</div>
+
+<nav style="background-color:thistle;padding:15px;">
+<a href="index.html" style="color:white;margin-right:20px;">Home</a>
+<a href="about.html" style="color:white;margin-right:20px;">About</a>
+<a href="Projects.html" style="color:white;margin-right:20px;">Projects</a>
+<a href="contact me.html" style="color:white;margin-right:20px;">Contact</a>
+<a href="skills.html" style="color:white;margin-right:20px;">My Skills</a>
+</nav>
+
 <h2>Contact Me</h2>
-        <fieldset>
-                <legend>Get Information:</legend>
-                <label>Name</label><br>
-            <input type="text" placeholder="Enter your name"><br><br>
-            <label>Email</label><br>
-            <input type="email" placeholder="Enter your email"><br><br>
-            <label>Message</label><br>
-            <textarea rows="5" cols="30" placeholder="Enter your message"></textarea><br>
-            <input type="submit" value="Send Message">
-    </fieldset>
-    <p>Email:guthi.vaishnavi@klh.edu.in</p>
-    <p>Phone: 9876543210</p>
+
+<form onsubmit="return validateForm()">
+
+<fieldset>
+<legend>Get Information:</legend>
+
+<label>Name</label><br>
+<input type="text" id="name" placeholder="Enter your name"><br><br>
+
+<label>Email</label><br>
+<input type="email" id="email" placeholder="Enter your email"><br><br>
+
+<label>Message</label><br>
+<textarea id="message" rows="5" cols="30" placeholder="Enter your message"></textarea><br><br>
+
+<input type="submit" value="Send Message">
+
+</fieldset>
+
+</form>
+
+<p>Email: guthi.vaishnavi@klh.edu.in</p>
+<p>Phone: 9876543210</p>
 <p>© 2026 My Portfolio</p>
-    <br>
+
+<br>
+
 </body>
 </html>

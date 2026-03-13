@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AgriConnect - Seeds Catalog</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial;
+    background:#f4f6f8;
+}
+.navbar{
+    background: linear-gradient(to right,#0f6d2f,#2fa84f);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    margin:0 12px;
+}
+
+.menu a:hover{
+    color:#caffca;
+}
+.hero{
+    height:300px;
+    background:url("https://www.taropumps.com/media/2538/type-of-seeds-2.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+
+.categories{
+    text-align:center;
+    margin:20px;
+}
+
+.categories button{
+    padding:10px 18px;
+    border:none;
+    margin:6px;
+    border-radius:20px;
+    background:#e5e5e5;
+    cursor:pointer;
+}
+
+.categories button.active{
+    background:#0f6d2f;
+    color:white;
+}
+
+
+.products{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    width:230px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    padding:15px;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    height:130px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.card h3{
+    margin:10px 0;
+}
+
+.price{
+    color:green;
+    font-weight:bold;
+}
+
+button.cart{
+    background:#0f6d2f;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    margin-top:8px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">🌱 AgriConnect</div>
+
+<div class="menu">
+<a href="DashBoard.html">Dashboard</a>
+<a href="Seeds.html">Seeds</a>
+<a href="Fertilizer.html">Fertilizer</a>
+<a href="Weather.html">Weather</a>
+<a href="Market.html">Market</a>
+<a href="community.html">community</a>
+<a href="ratings.html">Rating</a>
+</div>
+
+
+
+</div>
+
+
+<div class="hero">
+<div>
+<h1>🌱 Seeds Catalog</h1>
+<p>High-yield, certified & tested seeds for all crops</p>
+</div>
+</div>
+
+<div class="categories">
+
+<button onclick="filterSeeds('all')" class="active">All</button>
+<button onclick="filterSeeds('rice')">Rice</button>
+<button onclick="filterSeeds('wheat')">Wheat</button>
+<button onclick="filterSeeds('vegetable')">Vegetable</button>
+<button onclick="filterSeeds('cotton')">Cotton</button>
+<button onclick="filterSeeds('maize')">Maize</button>
+<button onclick="filterSeeds('oilseed')">Oilseed</button>
+
+</div>
+
+<div class="products">
+
+<div class="card rice">
+<img src="https://thumbs.dreamstime.com/z/paddy-rice-seed-burlap-sack-35205319.jpg">
+<h3>Paddy IR-64 Seeds</h3>
+<p class="price">₹1500 per bag</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card wheat">
+<img src="https://thumbs.dreamstime.com/z/wheat-seeds-background-spikelets-wheat-seeds-texture-top-view-wheat-seeds-background-spikelets-wheat-seeds-texture-top-120505494.jpg">
+<h3>Wheat Lok-1 Seeds</h3>
+<p class="price">₹850/bag</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+
+<div class="card wheat">
+<img src="https://cdn.britannica.com/18/122518-050-A0740F9F/Field-durum-wheat.jpg">
+<h3>Durum wheat</h3>
+<p class="price">₹350</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card wheat">
+<img src="https://media.sciencephoto.com/image/c0013571/800wm/C0013571-Bread_wheat_Triticum_aestivum_.jpg">
+<h3>Triticum Aestivum</h3>
+<p class="price">₹260 per 10kg </p>
+<button class="cart">Add to Cart</button>
+</div>
+
+
+<div class="card vegetable">
+<img src="https://eldiariony.com/wp-content/uploads/sites/2/2021/04/vegetales-frescos-shutterstock_598749548.jpg?quality=80&strip=all&w=1200">
+<h3>Hybrid Tomato Seeds</h3>
+<p class="price"> ₹200 per packet</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card cotton">
+<img src="https://5.imimg.com/data5/SELLER/Default/2025/2/491472456/RY/EB/QJ/14969811/cotton-seeds-1000x1000.jpg">
+<h3>BT Cotton Seeds</h3>
+<p class="price">₹750</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card maize">
+<img src="https://tse4.mm.bing.net/th/id/OIP.82LtZtaCZuTAwjEgURgTLAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3">
+<h3>Hybrid Maize Seeds</h3>
+<p class="price">₹140</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card oilseed">
+<img src="https://images.slurrp.com/prodarticles/3ovryh4cv.webp">
+<h3>Sunflower Seeds</h3>
+<p class="price">₹160</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card oilseed">
+<img src="https://lga-international.com/wp-content/uploads/castor-oil-500x358.jpg">
+<h3>Castor seeds</h3>
+<p class="price">₹63 per kg</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card vegetable">
+<img src="https://th.bing.com/th/id/OIP.67Nb2wiGanWbgGOekZ3WUAHaFj?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
+<h3>Bringal Seeds</h3>
+<p class="price">₹200</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+
+<div class="card vegetable">
+<img src="https://tse2.mm.bing.net/th/id/OIP.dXVv-pFckwdI142E5MyLlgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
+<h3>tomatoSeeds</h3>
+<p class="price">₹260</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+
+<div class="card vegetable">
+<img src="https://images.onlymyhealth.com/webstories/6851/1680716814-benefits-of-bitter-gourd-seeds.social.jpg">
+<h3>Bitterguard Seeds</h3>
+<p class="price">Small packet (25 seeds): ₹50</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card vegetable">
+<img src="https://tse1.mm.bing.net/th/id/OIP.u-dLzr4ep3eK2lT5bjoRqgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
+<h3>Beans seeds</h3>
+<p class="price">₹500 per packet</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+
+<div class="card vegetable">
+<img src="https://tse2.mm.bing.net/th/id/OIP.rVjZUWGGcypvhSYdGrUxFgHaEP?rs=1&pid=ImgDetMain&o=7&rm=3">
+<h3>cucumber seeds</h3>
+<p class="price">₹400</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card vegetable">
+<img src="https://5.imimg.com/data5/SELLER/Default/2022/9/LQ/QI/NQ/159261722/red-carrot-seeds-1000x1000.jpg">
+<h3>Carrot seeds</h3>
+<p class="price">₹800</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card vegetable">
+<img src="https://tse2.mm.bing.net/th/id/OIP.y9XJ4LcepzJkVOpXdL3a2wHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
+<h3>Beetroot seeds</h3>
+<p class="price">₹200</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card vegetable">
+<img src="https://greenexpertslandscape.ae/wp-content/uploads/2021/01/Spinach-seeds.jpg">
+<h3>Spinach  seeds</h3>
+<p class="price">₹100/kg</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card rice">
+<img src="https://5.imimg.com/data5/SELLER/Default/2022/12/FQ/QD/YJ/160295124/pussa-basmati-1847-basmati-seed-500x500.jpg">
+<h3>Basmati  seeds</h3>
+<p class="price">₹2500</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+
+<div class="card  Jasmine seeds">
+<img src="https://tse4.mm.bing.net/th/id/OIP.fyFiP3IRDsZDFiECfzG4QQHaHa?w=720&h=720&rs=1&pid=ImgDetMain&o=7&rm=3">
+<h3>Jasmine seeds</h3>
+<p class="price">₹300/kg</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card rice">
+<img src="https://images.saymedia-content.com/.image/t_share/MTkxNTUzODc5MjQ5ODU2MTYz/brown-rice-red-rice-black-rice-the-antioxidant-powerhouse.jpg">
+<h3>Brown rice seeds</h3>
+<p class="price">₹2000</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card Sweet cornseeds">
+<img src="https://th.bing.com/th/id/OIP.WOOOynuJ3VKUXxzBT5t0-AHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
+<h3>Sweet corn seeds</h3>
+<p class="price">₹100</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card oilseed">
+<img src="https://www.thespruceeats.com/thmb/KCnqKf3TqKxmye8oztADH8Ey1R4=/6144x0/filters:no_upscale():max_bytes(150000):strip_icc()/black-mustard-seeds----indian-spices-on-wooden-spoon--macro--911766480-71fd9cf103db41158be06d244f16b496.jpg">
+<h3>Mustard seeds</h3>
+<p class="price">₹40 per kg </p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card oilseed">
+<img src="https://tse4.mm.bing.net/th/id/OIP.eQbMewloZa-1_3WpBISLAAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3">
+<h3>Sunflower seeds</h3>
+<p class="price">₹72 per kg</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card oilseed">
+<img src="https://5.imimg.com/data5/XV/QV/VF/SELLER-82348657/soybean-seeds-500x500.png">
+<h3>Soyabean seeds</h3>
+<p class="price">300</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+<div class="card oilseed">
+    <img src="https://down-sg.img.susercontent.com/file/c55c2305af675f7ba477ff1f0c3b7d5a">
+    <h3>Safflower seeds</h3>
+    <p class="price">₹80 per kg</p>
+    <button class="cart">Add to Cart</button>
+</div>
+
+
+<div class="card oilseed">
+<img src="https://5.imimg.com/data5/SELLER/Default/2023/4/299505756/DJ/EE/AE/111485687/groundnut-seeds-500x500.jpg">
+<h3>Groundnutseeds</h3>
+<p class="price">₹70 per kg</p>
+<button class="cart">Add to Cart</button>
+</div>
+
+</div>
+
+<script>
+
+function filterSeeds(category){
+
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+if(category === "all"){
+card.style.display="block";
+}
+else if(card.classList.contains(category)){
+card.style.display="block";
+}
+else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
+```

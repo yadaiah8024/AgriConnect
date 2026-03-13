@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AgriConnect Market</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f6f8;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 40px;
+text-align:right;
+z-index:10;
+background:rgba(0,0,0,0.3);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+font-weight:bold;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* MANDI BUTTONS */
+
+.mandis{
+text-align:center;
+margin-top:100px;
+}
+
+.mandis button{
+padding:10px 18px;
+margin:6px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+background:#eee;
+}
+
+.mandis .selected{
+background:red;
+color:white;
+}
+
+/* PRICE BAR */
+
+.pricebar{
+background:#ffe9e9;
+padding:12px;
+margin:20px;
+border-radius:10px;
+text-align:center;
+}
+
+/* TABLE */
+
+table{
+width:90%;
+margin:auto;
+background:white;
+border-radius:10px;
+border-collapse:collapse;
+overflow:hidden;
+}
+
+th,td{
+padding:14px;
+text-align:center;
+border-bottom:1px solid #eee;
+}
+
+th{
+background:#f1f1f1;
+}
+
+.up{
+color:green;
+font-weight:bold;
+}
+
+.down{
+color:red;
+font-weight:bold;
+}
+
+.stable{
+color:gray;
+}
+
+/* FOOTER */
+
+footer{
+background:#1c1c1c;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="dashboard.html">Dashboard</a>
+<a href="Seeds.html">Seeds</a>
+<a href="Fertilizer.html">Fertilizer</a>
+<a href="Weather.html">Weather</a>
+<a href="Market.html">Market</a>
+<a href="Community.html">Community</a>
+<a href="ratings.html">Ratings</a>
+
+</nav>
+
+<div class="mandis">
+<button class="selected">Gudimalkapur Mandi</button>
+<button>Shamshabad Market</button>
+</div>
+
+<div class="pricebar">
+📊 Hyderabad Market Prices <span style="color:green">Live</span>
+</div>
+
+<table id="marketTable">
+<tr>
+<th>Item</th>
+<th>Price (₹/kg)</th>
+<th>Trend</th>
+</tr>
+</table>
+
+<footer>
+© 2026 AgriConnect
+</footer>
+
+<script>
+
+let buttons = document.querySelectorAll(".mandis button");
+let table = document.getElementById("marketTable");
+
+let mandiData = {
+
+"Gudimalkapur Mandi":[
+["🍅 Tomato","₹40","⬆ Up","up"],
+["🍆 Brinjal","₹35","⬇ Down","down"],
+["🥔 Potato","₹30","Stable","stable"],
+["🥕 Carrot","₹45","⬆ Up","up"],
+["🧅 Onion","₹38","⬇ Down","down"],
+["🥬 Cabbage","₹25","Stable","stable"],
+["🌶️ Green Chilli","₹60","⬆ Up","up"],
+["🥒 Cucumber","₹28","⬇ Down","down"],
+["🫘 Beans","₹55","⬆ Up","up"],
+["🥦 Cauliflower","₹42","⬆ Up","up"],
+["🥒 Bottle Gourd","₹32","⬇ Down","down"],
+["🥒 Ridge Gourd","₹36","⬆ Up","up"],
+["🥒 Bitter Gourd","₹48","⬆ Up","up"],
+["🫑 Capsicum","₹65","⬆ Up","up"],
+
+/* FLOWERS */
+
+["🌹 Rose","₹200","⬆ Up","up"],
+["🌼 Marigold","₹120","⬆ Up","up"],
+["🌸 Lily","₹250","⬆ Up","up"],
+["🌻 Chamanthi","₹25","⬇ Down","down"],
+["🌺 Chandini","₹30","⬇ Down","down"],
+["🌼 Jasmine","₹300","⬆ Up","up"],
+["🌸 Lotus","₹220","Stable","stable"],
+["🌺 Hibiscus","₹140","⬇ Down","down"],
+["🌼 Crossandra","₹260","⬆ Up","up"]
+],
+
+"Shamshabad Market":[
+["🍅 Tomato","₹40","⬆ Up","up"],
+["🍆 Brinjal","₹35","⬇ Down","down"],
+["🥔 Potato","₹30","Stable","stable"],
+["🥕 Carrot","₹45","⬆ Up","up"],
+["🧅 Onion","₹38","⬇ Down","down"],
+["🥬 Cabbage","₹25","Stable","stable"],
+["🌶️ Green Chilli","₹60","⬆ Up","up"],
+["🥒 Cucumber","₹28","⬇ Down","down"],
+["🫘 Beans","₹55","⬆ Up","up"],
+["🥦 Cauliflower","₹42","⬆ Up","up"],
+["🥒 Bottle Gourd","₹32","⬇ Down","down"],
+["🥒 Ridge Gourd","₹36","⬆ Up","up"],
+["🥒 Bitter Gourd","₹48","⬆ Up","up"],
+["🫑 Capsicum","₹65","⬆ Up","up"]
+]
+
+};
+
+// Function to populate table
+buttons.forEach(function(btn){
+btn.addEventListener("click", function(){
+
+  buttons.forEach(function(b){ b.classList.remove("selected"); });
+  this.classList.add("selected");
+
+  let mandi = this.innerText;
+  let data = mandiData[mandi];
+
+  let rows = `
+    <tr>
+      <th>Item</th>
+      <th>Price (₹/kg)</th>
+      <th>Trend</th>
+    </tr>
+  `;
+
+  if(mandi === "Gudimalkapur Mandi"){
+    // Vegetables Section
+    rows += `
+      <tr>
+        <td colspan="3" style="background:#f9f9f9; font-weight:bold; text-align:left; padding-left:20px;">🥕 Vegetables</td>
+      </tr>
+    `;
+    data.forEach(function(item){
+      if(!(item[0].includes("🌹") || item[0].includes("🌼") || item[0].includes("🌸") || item[0].includes("🌻") || item[0].includes("🌺"))){
+        rows += `
+          <tr>
+            <td>${item[0]}</td>
+            <td>${item[1]}</td>
+            <td class="${item[3]}">${item[2]}</td>
+          </tr>
+        `;
+      }
+    });
+
+    // Flowers Section
+    rows += `
+      <tr>
+        <td colspan="3" style="background:#f9f9f9; font-weight:bold; text-align:left; padding-left:20px;">🌸 Flowers</td>
+      </tr>
+    `;
+    data.forEach(function(item){
+      if(item[0].includes("🌹") || item[0].includes("🌼") || item[0].includes("🌸") || item[0].includes("🌻") || item[0].includes("🌺")){
+        rows += `
+          <tr>
+            <td>${item[0]}</td>
+            <td>${item[1]}</td>
+            <td class="${item[3]}">${item[2]}</td>
+          </tr>
+        `;
+      }
+    });
+
+  } else {
+    // Shamshabad Market: only vegetables
+    rows += `
+      <tr>
+        <td colspan="3" style="background:#f9f9f9; font-weight:bold; text-align:left; padding-left:20px;">🥕 Vegetables</td>
+      </tr>
+    `;
+    data.forEach(function(item){
+      rows += `
+        <tr>
+          <td>${item[0]}</td>
+          <td>${item[1]}</td>
+          <td class="${item[3]}">${item[2]}</td>
+        </tr>
+      `;
+    });
+  }
+
+  table.innerHTML = rows;
+
+});
+
+});
+
+// Load default table (Gudimalkapur)
+document.querySelector(".mandis .selected").click();
+
+</script>
+
+</body>
+</html>

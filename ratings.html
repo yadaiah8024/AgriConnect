@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ratings & Reviews</title>
+
+<style>
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f2f2f2;
+    margin:0;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 40px;
+    text-align:right;
+    z-index:10;
+    background:rgba(0,0,0,0.3);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* Header Banner */
+
+.banner{
+    background:linear-gradient(90deg,#f6a400,#f8b400);
+    padding:35px;
+    text-align:center;
+    color:white;
+}
+
+.banner h1{
+    margin:0;
+    font-size:32px;
+}
+
+.banner p{
+    margin-top:5px;
+}
+
+/* Rating Card */
+
+.rating-card{
+    width:750px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    display:flex;
+    gap:40px;
+}
+
+/* Average Rating */
+
+.avg-rating{
+    text-align:center;
+}
+
+.avg-rating h2{
+    font-size:70px;
+    margin:0;
+    color:#f6a400;
+}
+
+.stars{
+    color:#f6a400;
+    font-size:22px;
+}
+
+.review-count{
+    color:gray;
+    font-size:14px;
+}
+
+/* Progress Bars */
+
+.bars{
+    flex:1;
+}
+
+.bar-row{
+    display:flex;
+    align-items:center;
+    margin:10px 0;
+}
+
+.bar-row span{
+    width:30px;
+}
+
+.progress{
+    flex:1;
+    height:10px;
+    background:#eee;
+    border-radius:10px;
+    margin:0 10px;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    background:#f6a400;
+}
+
+.percent{
+    width:40px;
+    font-size:14px;
+    color:gray;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<nav>
+<a href="dashboard.html">Dashboard</a>
+<a href="Seeds.html">Seeds</a>
+<a href="Fertilizer.html">Fertilizer</a>
+<a href="Weather.html">Weather</a>
+<a href="Market.html">Market</a>
+<a href="Community.html">Community</a>
+<a href="ratings.html">Ratings</a>
+</nav>
+
+
+<div class="banner">
+<h1>⭐ Ratings & Reviews</h1>
+<p>Real feedback from real farmers across India</p>
+</div>
+
+<div class="rating-card">
+
+<div class="avg-rating">
+<h2>4.4</h2>
+<div class="stars">★★★★★</div>
+<div class="review-count">3,842 reviews</div>
+</div>
+
+<div class="bars">
+
+<div class="bar-row">
+<span>5 ⭐</span>
+<div class="progress">
+<div class="fill" style="width:55%"></div>
+</div>
+<div class="percent">55%</div>
+</div>
+
+<div class="bar-row">
+<span>4 ⭐</span>
+<div class="progress">
+<div class="fill" style="width:28%"></div>
+</div>
+<div class="percent">28%</div>
+</div>
+
+<div class="bar-row">
+<span>3 ⭐</span>
+<div class="progress">
+<div class="fill" style="width:10%"></div>
+</div>
+<div class="percent">10%</div>
+</div>
+
+<div class="bar-row">
+<span>2 ⭐</span>
+<div class="progress">
+<div class="fill" style="width:5%"></div>
+</div>
+<div class="percent">5%</div>
+</div>
+
+<div class="bar-row">
+<span>1 ⭐</span>
+<div class="progress">
+<div class="fill" style="width:2%"></div>
+</div>
+<div class="percent">2%</div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>AgriConnect Ratings</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f6f8;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:linear-gradient(to right,#0b7a2a,#36a000);
+color:white;
+padding:15px;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+/* REVIEW FORM */
+
+.review-form{
+width:70%;
+margin:30px auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.review-form h2{
+margin-bottom:10px;
+}
+
+.review-form input,
+.review-form textarea,
+.review-form select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+.review-form button{
+background:#ff9800;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* REVIEWS */
+
+.reviews{
+width:70%;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.star{
+color:gold;
+font-size:18px;
+}
+
+.user{
+font-weight:bold;
+}
+
+footer{
+background:#1c1c1c;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- REVIEW FORM -->
+
+<div class="review-form">
+
+<h2>Submit Your Review</h2>
+
+<input type="text" id="name" placeholder="Your Name">
+
+<select id="rating">
+<option value="5">5 Stars</option>
+<option value="4">4 Stars</option>
+<option value="3">3 Stars</option>
+<option value="2">2 Stars</option>
+<option value="1">1 Star</option>
+</select>
+
+<textarea id="reviewText" rows="4" placeholder="Write your review here..."></textarea>
+
+<button onclick="submitReview()">Submit Review</button>
+
+</div>
+
+
+<!-- REVIEWS LIST -->
+
+<div class="reviews" id="reviewList">
+
+
+<div class="card">
+<div class="user">Ramesh Patel</div>
+<div class="star">⭐⭐⭐⭐⭐</div>
+<p>Excellent seed quality and fast delivery.</p>
+</div>
+
+</div>
+
+
+<footer>
+© 2026 AgriConnect
+</footer>
+
+
+<script>
+
+function submitReview(){
+
+let name=document.getElementById("name").value;
+let rating=document.getElementById("rating").value;
+let review=document.getElementById("reviewText").value;
+
+if(name=="" || review==""){
+alert("Please fill all fields");
+return;
+}
+
+let stars="";
+
+for(let i=0;i<rating;i++){
+stars+="⭐";
+}
+
+let card=document.createElement("div");
+card.className="card";
+
+card.innerHTML=
+"<div class='user'>"+name+"</div>"+
+"<div class='star'>"+stars+"</div>"+
+"<p>"+review+"</p>";
+
+document.getElementById("reviewList").prepend(card);
+
+document.getElementById("name").value="";
+document.getElementById("reviewText").value="";
+
+}
+
+</script>
+
+</body>
+</html>

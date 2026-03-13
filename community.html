@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Farmer Community</title>
+
+<style>
+
+/* NAVBAR */
+
+.navbar{
+    background: linear-gradient(to right,#0f6d2f,#2fa84f);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    margin:0 12px;
+}
+
+.menu a:hover{
+    color:#caffca;
+}
+
+
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    padding:40px;
+    background:#2e7d32;
+    color:white;
+}
+
+.header h1{
+    margin:0;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+    text-align:center;
+    margin-top:40px;
+    font-size:26px;
+    color:#333;
+}
+
+/* EXPERT SECTION */
+
+.expert-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.expert-card{
+    background:white;
+    width:230px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.expert-card img{
+    width:70px;
+}
+
+.expert-card h3{
+    margin:10px 0 5px;
+}
+
+.chat-btn{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* COMMUNITY FEED */
+
+.feed{
+    max-width:800px;
+    margin:40px auto;
+}
+
+.post{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.post-header{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.location{
+    color:gray;
+    font-size:14px;
+}
+
+.tags{
+    margin-top:10px;
+    color:#2e7d32;
+}
+
+.post-footer{
+    margin-top:10px;
+    color:gray;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">🌱 AgriConnect</div>
+
+<div class="menu">
+<a href="dashboard.html">Index</a>
+<a href="Seeds.html">Seeds</a>
+<a href="Fertilizer.html">Fertilizer</a>
+<a href="Weather.html">Weather</a>
+<a href="Market.html">Market</a>
+<a href="community.html">community</a>
+<a href="ratings.html">Rating</a>
+</div>
+
+
+
+</div>
+<div class="header">
+<h1>👨‍🌾 Farmer Community</h1>
+<p>Share, learn & grow together with farmers across India</p>
+</div>
+
+
+<h2 class="section-title">🎓 Ask an Expert</h2>
+
+<div class="expert-container">
+
+<div class="expert-card">
+<img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+<h3>Dr. Suresh Kumar</h3>
+<p>Soil Scientist</p>
+<p>ICAR</p>
+<button class="chat-btn">Chat Now</button>
+</div>
+
+<div class="expert-card">
+<img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png">
+<h3>Dr. Kavita Singh</h3>
+<p>Crop Pathologist</p>
+<p>PAU Ludhiana</p>
+<button class="chat-btn">Chat Now</button>
+</div>
+
+<div class="expert-card">
+<img src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png">
+<h3>Mr. Arjun Nair</h3>
+<p>Agri Extension Officer</p>
+<p>Govt. of Kerala</p>
+<button class="chat-btn">Chat Now</button>
+</div>
+
+</div>
+
+
+<h2 class="section-title">📢 Community Feed</h2>
+
+<div class="feed">
+
+<div class="post">
+<div class="post-header">👨‍🌾 Ramesh Patel</div>
+<div class="location">📍 Surat, Gujarat · 2h ago</div>
+<p>
+Used drip irrigation for the first time this season on my cotton field.
+Water usage reduced by 40% and yield improved by 20%. Highly recommend!
+</p>
+<div class="tags">#Cotton #Drip Irrigation</div>
+<div class="post-footer">👍 142 &nbsp;&nbsp; 💬 28 &nbsp;&nbsp; Share</div>
+</div>
+
+
+<div class="post">
+<div class="post-header">👩‍🌾 Sunita Devi</div>
+<div class="location">📍 Patna, Bihar · 5h ago</div>
+<p>
+Paddy crop showing yellow leaves in my field. Applied Zinc Sulphate as
+recommended and seeing improvement in 3 days.
+</p>
+<div class="tags">#Paddy #Nutrient Deficiency</div>
+<div class="post-footer">👍 89 &nbsp;&nbsp; 💬 34 &nbsp;&nbsp; Share</div>
+</div>
+
+
+<div class="post">
+<div class="post-header">👨‍🌾 Mahesh Yadav</div>
+<div class="location">📍 Nagpur, Maharashtra · 1d ago</div>
+<p>
+Orange market price is ₹45/kg today at Nagpur Mandi. Good time to sell!
+Holding back because price may rise further after Diwali.
+</p>
+<div class="tags">#Market #Orange</div>
+<div class="post-footer">👍 213 &nbsp;&nbsp; 💬 67 &nbsp;&nbsp; Share</div>
+</div>
+
+
+<div class="post">
+<div class="post-header">👩‍🌾 Priya Krishnamurthy</div>
+<div class="location">📍 Coimbatore, TN · 2d ago</div>
+<p>
+Vermicompost from kitchen waste changed my farm completely. Zero chemical
+fertilizer this season and soil health is amazing. Try organic farming!
+</p>
+<div class="tags">#Organic #Vermicompost</div>
+<div class="post-footer">👍 378 &nbsp;&nbsp; 💬 92 &nbsp;&nbsp; Share</div>
+</div>
+
+</div>
+
+</body>
+</html>
